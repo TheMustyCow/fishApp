@@ -20,8 +20,8 @@
 ## Mobile App View
 
 <div style="display: flex; gap: 10px;">
-    <img src="assets/screenshots/mobileMapView.png" width="250">
-    <img src="assets/screenshots/mobileCreatePin.png" width="250">
+    <img src="assets/screenshots/mobileMapView.PNG" width="250">
+    <img src="assets/screenshots/mobileCreatePin.PNG" width="250">
 </div>
 
 ## Ai prompt
