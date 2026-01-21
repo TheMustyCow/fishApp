@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TextInput, StyleSheet } from 'react-native';
+import { View, TextInput, StyleSheet, Platform } from 'react-native';
 
 const SearchBar = ({ value, onChangeText, placeholder }) => {
   return (
@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 20,
     paddingVertical: 10,
+    paddingTop: Platform.OS === 'ios' ? 10 : 20, // Extra top padding for mobile
     backgroundColor: '#f8f8f8',
   },
   input: {

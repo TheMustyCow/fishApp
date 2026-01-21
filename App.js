@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, Alert } from 'react-native';
+import { StyleSheet, View, Alert, SafeAreaView, Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Logo from './components/Logo';
 import Map from './components/Map';
 import SearchBar from './components/SearchBar';
 import EntryForm from './components/EntryForm';
@@ -76,25 +77,28 @@ export default function App() {
   };
 
   return (
-    <View style={styles.container}>
-      <SearchBar
-        value={searchQuery}
-        onChangeText={setSearchQuery}
-        placeholder="Search fish species..."
-      />
-      <Map
-        pins={pins}
-        onLongPress={handleLongPress}
-        searchFilter={searchQuery}
-      />
-      <EntryForm
-        visible={entryFormVisible}
-        onClose={() => setEntryFormVisible(false)}
-        onSubmit={handleAddEntry}
-        location={selectedLocation}
-      />
+    <SafeAreaView style={styles.container}>
+      <View style={styles.content}>
+        <Logo />
+        <SearchBar
+          value={searchQuery}
+          onChangeText={setSearchQuery}
+          placeholder="Search fish species..."
+        />
+        <Map
+          pins={pins}
+          onLongPress={handleLongPress}
+          searchFilter={searchQuery}
+        />
+        <EntryForm
+          visible={entryFormVisible}
+          onClose={() => setEntryFormVisible(false)}
+          onSubmit={handleAddEntry}
+          location={selectedLocation}
+        />
+      </View>
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -102,5 +106,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+  },
+  content: {
+    flex: 1,
+    marginTop: 20, // Push content down from the top
+    paddingTop: Platform.OS === 'ios' ? 10 : 20, // Additional padding for spacing
   },
 });

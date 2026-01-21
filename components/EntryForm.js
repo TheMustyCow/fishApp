@@ -159,6 +159,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     maxHeight: '80%',
+    flex: 1,
   },
   header: {
     flexDirection: 'row',
@@ -180,6 +181,7 @@ const styles = StyleSheet.create({
     color: '#666',
   },
   form: {
+    flex: 1,
     padding: 20,
   },
   inputGroup: {
