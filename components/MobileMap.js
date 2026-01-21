@@ -95,6 +95,8 @@ const styles = StyleSheet.create({
   },
   map: {
     height: screenHeight * 0.6, // Adjusted for logo and search bar
+    borderRadius: 12,
+    paddingHorizontal: 10,
   },
   loading: {
     justifyContent: 'center',

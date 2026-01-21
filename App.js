@@ -80,16 +80,17 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
         <Logo />
-        <SearchBar
-          value={searchQuery}
-          onChangeText={setSearchQuery}
-          placeholder="Search fish species..."
-        />
-        <Map
-          pins={pins}
-          onLongPress={handleLongPress}
-          searchFilter={searchQuery}
-        />
+         <SearchBar
+           value={searchQuery}
+           onChangeText={setSearchQuery}
+           placeholder="Search fish species..."
+         />
+         <View style={{ height: 100 }} />
+         <Map
+           pins={pins}
+           onLongPress={handleLongPress}
+           searchFilter={searchQuery}
+         />
         <EntryForm
           visible={entryFormVisible}
           onClose={() => setEntryFormVisible(false)}
@@ -109,7 +110,7 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    marginTop: 20, // Push content down from the top
+    marginTop: 0, // Push content down from the top
     paddingTop: Platform.OS === 'ios' ? 10 : 20, // Additional padding for spacing
   },
 });
